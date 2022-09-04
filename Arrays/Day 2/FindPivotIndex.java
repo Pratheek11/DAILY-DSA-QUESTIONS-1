@@ -11,7 +11,7 @@ class Solution {
         int rightSum=0, leftSum=0;
            
         // GET TOTAL SUM
-        for(int i:nums) rightSum+=i;
+        for(int i : nums) rightSum+=i;
         
         for(int i=0;i<nums.length;i++){
             // DECREMENT TO GET RIGHT SUM 
