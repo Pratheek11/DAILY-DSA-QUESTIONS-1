@@ -1,7 +1,7 @@
 
 // MATH FORMULA
 // https://leetcode.com/problems/fibonacci-number/discuss/1287817/Binet-Formula-Easy-Java-Solution
-// T C : O ( √ n )
+// T C : O ( √ n ) + O ( n ) ===> O ( n )
 // S C : O ( 1 ) 
 
 class Solution {
