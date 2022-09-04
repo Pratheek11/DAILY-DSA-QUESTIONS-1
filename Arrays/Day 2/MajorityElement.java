@@ -26,7 +26,7 @@ class Solution {
         
         int check = 0;
         
-        for(int num : a){
+        for(int num : nums){
             if(num == candidate){
                 check++;
             }
