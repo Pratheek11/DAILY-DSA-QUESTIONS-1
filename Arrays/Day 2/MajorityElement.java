@@ -22,7 +22,18 @@ class Solution {
             }
         }
 
-        return candidate;
+        // CHECK IF ARRAY MAJORITY DOESNT HAVE N / 2 ELEMNTS
+        
+        int check = 0;
+        
+        for(int num : a){
+            if(num == candidate){
+                check++;
+            }
+        }
+        
+        
+        return check > size / 2 ? candidate : -1;
     }
 }
 
