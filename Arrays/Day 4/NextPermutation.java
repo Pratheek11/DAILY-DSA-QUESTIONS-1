@@ -1,44 +1,39 @@
-package LINKEDIN;
+// T C : O ( n ) 
+// S C : O ( n )
 
-public class GetDistinctHighestLexicographString {
-
-    public static String getString(String input_str){
-        String ans = "";
-
-        int[] alphabets = new int[26];
-        int position = 0;
-
-        // MARK THE ALPHABETS TO FREQUENCY TABLE
-        for(int i = 0; i < input_str.length() ; i++){
-
-            position = input_str.charAt(i) - 'a';
-
-            if( alphabets[position] == 0 ){
-                alphabets[position] = 1;
-            }
-
-        }
-
-        // TRAVERSE REVERSE AND GET CHARACTERS
-        for(int i = 25; i >= 0; i--){
-
-            char ch = (char) ( i + 'a');
-
-            if( alphabets[i] == 1 ){
-                ans = ans + Character.toString(ch);
-            }
-
-        }
-
-        return ans;
+class Solution {
+    public void nextPermutation(int[] nums) {
+          // BASE CHECK
+          if(nums==null || nums.length<=1) return;
+        
+          int i = nums.length-2;
+        
+          // BREAK POINT
+          while(i>=0 && nums[i]>=nums[i+1]) i--;
+        
+          // FIND NEXT SMALLEST NUMBER 
+          if(i>=0){
+                int j = nums.length - 1;
+                while(nums[j]<=nums[i]) j--;
+                swap(nums,i,j); 
+          }
+            
+          reverse(nums, i+1, nums.length - 1);   
     }
-
-    public static void main(String[] args) {
-
-        String str = "abacaba";
-
-        System.out.println(getString(str));
-
+    
+    // Swap Function
+    public void swap(int[] nums, int i, int j){
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
     }
-
+    
+    // Revrse Function
+    public void reverse(int[] nums, int start, int end){
+        while( start <= end ){
+            swap(nums, start, end);
+            start++;
+            end--;
+        }
+    }
 }
