@@ -4,9 +4,6 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
         
-        // T C : 2 * ( M * N ) === O ( M * N )
-        // S C : O ( 1 )
-        
         int rows = matrix.length;
         int cols = matrix[0].length;
         int col0 = 1;
